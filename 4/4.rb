@@ -21,3 +21,19 @@ overlapping = assignements.filter do |pair|
 end
 
 puts overlapping.count
+
+# question 2
+
+overlapping_at_all = assignements.filter do |pair|
+  first = pair.split(',')[0]
+  second = pair.split(',')[1]
+
+  first_interval = (first.split('-')[0]..first.split('-')[1]).to_a
+  second_interval = (second.split('-')[0]..second.split('-')[1]).to_a
+
+  overlap = (first_interval & second_interval)
+
+  overlap.count > 0
+end
+
+puts overlapping_at_all.count
