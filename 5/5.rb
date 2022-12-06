@@ -36,24 +36,24 @@ stacks.push(stack8)
 stacks.push(stack9)
 
 moves = input.split("\n").map do |move|
-    qty = move.split(" ")[1].to_i
-    from = move.split(" ")[3].to_i
-    to = move.split(" ")[5].to_i
-    {qty: qty, from: from, to: to} 
+  qty = move.split(" ")[1].to_i
+  from = move.split(" ")[3].to_i
+  to = move.split(" ")[5].to_i
+  {qty: qty, from: from, to: to} 
 end
 
 moves.each do |m|
-    puts "#{m}"
-    index_from = m[:from] - 1
-    index_to = m[:to] - 1
-    qty = m[:qty]
-    puts "before #{stacks[index_from]}"
-    to_move = (1..qty).map { |_| stacks[index_from].pop }
-    puts "after #{stacks[index_from]}"
-    puts "to_move #{to_move}"
-    puts "before move #{stacks[index_to]}"
-    stacks[index_to] += to_move
-    puts "after move #{stacks[index_to]}"
+  puts "#{m}"
+  index_from = m[:from] - 1
+  index_to = m[:to] - 1
+  qty = m[:qty]
+  puts "before #{stacks[index_from]}"
+  to_move = (1..qty).map { |_| stacks[index_from].pop }
+  puts "after #{stacks[index_from]}"
+  puts "to_move #{to_move}"
+  puts "before move #{stacks[index_to]}"
+  stacks[index_to] += to_move
+  puts "after move #{stacks[index_to]}"
 end
 
 puts "message: #{stacks.map { |s| s.last }.join('')}"
@@ -82,17 +82,17 @@ stacks.push(stack8)
 stacks.push(stack9)
 
 moves.each do |m|
-    puts "#{m}"
-    index_from = m[:from] - 1
-    index_to = m[:to] - 1
-    qty = m[:qty]
-    puts "before #{stacks[index_from]}"
-    to_move = stacks[index_from].pop(qty)
-    puts "after #{stacks[index_from]}"
-    puts "to_move #{to_move}"
-    puts "before move #{stacks[index_to]}"
-    stacks[index_to] += to_move
-    puts "after move #{stacks[index_to]}"
+  puts "#{m}"
+  index_from = m[:from] - 1
+  index_to = m[:to] - 1
+  qty = m[:qty]
+  puts "before #{stacks[index_from]}"
+  to_move = stacks[index_from].pop(qty)
+  puts "after #{stacks[index_from]}"
+  puts "to_move #{to_move}"
+  puts "before move #{stacks[index_to]}"
+  stacks[index_to] += to_move
+  puts "after move #{stacks[index_to]}"
 end
 
 puts "message: #{stacks.map { |s| s.last }.join('')}"
